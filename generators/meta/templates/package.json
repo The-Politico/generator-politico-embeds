@@ -1,0 +1,14 @@
+{
+  "name": "politico-interactive-embed-<%=slug%>",
+  "version": "1.0.0",
+  "description": "A Politico interactive embed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests\" && exit 1"
+  },
+  "author": {
+    "name": "<%=userName%>",
+    "email": "<%=userEmail%>"
+  },
+  "license": "ISC"
+}
