@@ -2,10 +2,10 @@ const Generator = require('yeoman-generator');
 
 module.exports = class extends Generator {
   initializing() {
+    this.composeWith('politico-interactives:passphrase');
     this.composeWith('politico-interactives:linters');
     this.composeWith('politico-interactives:gulp');
     this.composeWith('politico-interactives:styles');
-    this.composeWith('politico-interactives:aws');
   }
 
   prompting() {

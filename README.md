@@ -1,6 +1,6 @@
 ![POLITICO](https://rawgithub.com/The-Politico/src/master/images/logo/badge.png)
 
-# generator-politico-embeds [![npm version](https://badge.fury.io/js/generator-politico-embeds.svg)](https://badge.fury.io/js/generator-politico-embeds)
+# generator-politico-embeds [![npm](https://img.shields.io/npm/v/generator-politico-embeds.svg)](https://www.npmjs.com/package/generator-politico-embeds)
 
 A [Yeoman](http://yeoman.io) generator to scaffold a development environment for building POLITICO embeddable interactives.
 
@@ -66,12 +66,11 @@ $ gulp publish --invalidate
     ```bash
     $ yarn install
     ```
-3. Create a new `aws.json` using `aws.json.example`.
-4. If your project is using ArchieML, run `gulp archie` to reconfigure :
+3. If your project is using ArchieML, run `gulp archie` to reconfigure :
     ```bash
     $ gulp archie
     ```
-5. Start `gulp`!
+4. Start `gulp`!
 
 #### Working with templates
 
@@ -100,33 +99,6 @@ There is also an extra filter specifically for rendering [Markdown](https://gith
 <h1>{{sectionTitle|markdown(strip=true)}}</h1>
 ```
 
-#### UnCSS
-
-When building for production, this app uses [UnCSS](https://github.com/giakki/uncss) to remove unused styles. If you have rules that apply to classes set with JavaScript, you must explicitly tell UnCSS not to remove them with a special comment. By default, we also tell UnCSS to ignore any rules set inside a graphics section or with a class of `dataviz`.
-
-```CSS
-/* These rules will all be preserved by UnCSS */
-
-/* uncss:ignore */
-.myClass {
-    /* ... */
-}
-
-section.graphic{
-    /*...*/
-    .myClass {
-        /*...*/
-    }
-}
-
-.dataviz {
-    /*...*/
-    .myClass {
-        /*...*/
-    }
-}
-
-```
 
 #### ArchieML
 

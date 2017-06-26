@@ -1,6 +1,6 @@
 {
   "name": "generator-politico-embeds",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Yeoman generator for embeddable interactives at POLITICO.",
   "main": "index.js",
   "scripts": {
@@ -18,6 +18,7 @@
     "url": "https://github.com/The-Politico"
   },
   "license": "ISC",
+  "repository": "The-Politico/generator-politico-embeds",
   "dependencies": {
     "chalk": "^1.1.3",
     "mkdirp": "^0.5.1",
@@ -26,7 +27,7 @@
     "yeoman-generator": "^1.1.1"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
+    "eslint": "3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
