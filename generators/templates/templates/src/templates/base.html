@@ -3,8 +3,7 @@
     <head>
         <meta charset="utf-8">
         {%block title%}<title>Politico Interactives</title>{%endblock%}
-        <%# Skip if using webpack. #%>
-        <% if (!webpack) { %> <link href="css/main.bundle.css" rel="stylesheet"> <% } %>
+        <link href="css/main-app.css" rel="stylesheet">
         <!--Typekit-->
         <script src="https://use.typekit.net/you6ipe.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -13,6 +12,6 @@
     <body>
         {%block content%}{%endblock%}
         <%# Skip if using webpack. #%>
-        <% if (!webpack) { %> <script type="text/javascript" src="js/main.bundle.js"> </script> <% } %>
+        <script type="text/javascript" src="js/main-app.bundle.js"> </script>
     </body>
 </html>
