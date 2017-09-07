@@ -57,6 +57,9 @@ module.exports = class extends Generator {
       this.destinationPath('src/templates/base.html'));
     // Template context
     this.fs.writeJSON('src/data/data.json', {});
+    this.fs.copy(
+      this.templatePath('server/router.js'),
+      this.destinationPath('server/router.js'));
     // Images directory
     mkdirp('./src/images');
     mkdirp('./dist/images');
@@ -74,10 +77,6 @@ module.exports = class extends Generator {
   }
 
   end() {
-    this.fs.copy(
-      this.templatePath('server/router.js'),
-      this.destinationPath('server/router.js'));
-
     this.spawnCommand('gulp')
   }
 };
