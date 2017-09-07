@@ -17,7 +17,7 @@ module.exports = class extends Generator {
     this.slug = S(this.title).slugify().s;
 
     const timestamp = new Date();
-    const publishPath = `http://www.politico.com/interactives/${timestamp.getFullYear()}/embed/${this.slug}/`;
+    const publishPath = `https://www.politico.com/interactives/${timestamp.getFullYear()}/embed/${this.slug}/`;
 
     this.fs.copy(
       this.templatePath('gitignore'),
