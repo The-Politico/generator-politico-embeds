@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 router.get('/embed', function(req, res) {
   
   const ctx = context.getContext();
-  
+  ctx['embedded'] = true;
   res.render('index.html', ctx);
 });
 
