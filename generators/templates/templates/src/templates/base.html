@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        {%block title%}<title>Politico Interactives</title>{%endblock%}
-        <%# Skip if using webpack. #%>
-        <% if (!webpack) { %> <link href="css/main.bundle.css" rel="stylesheet"> <% } %>
-        <!--Typekit-->
-        <script src="https://use.typekit.net/you6ipe.js"></script>
-        <script>try{Typekit.load({ async: true });}catch(e){}</script>
-        <!-- end -->
-    </head>
-    <body>
-        {%block content%}{%endblock%}
-        <%# Skip if using webpack. #%>
-        <% if (!webpack) { %> <script type="text/javascript" src="js/main.bundle.js"> </script> <% } %>
-    </body>
+
+<head>
+  <meta charset="utf-8"> {%block title%}
+  <title>Politico Interactives</title>{%endblock%}
+  {% if not embedded %}
+  <link href="./css/main-app.css" rel="stylesheet">
+  {% endif %}
+  <!--Typekit-->
+  <script src="https://use.typekit.net/you6ipe.js"></script>
+  <script>
+    try {
+      Typekit.load({
+        async: true
+      });
+    } catch (e) {}
+  </script>
+  <!-- end -->
+</head>
+
+<body>
+  {%block content%} {%endblock%} 
+  {% if embedded %}
+  <script type="text/javascript" src="../js/main-app.bundle.js"></script>
+  {% else %}
+  <script type="text/javascript" src="./js/main-app.bundle.js"></script>
+  {% endif %}
+</body>
+
 </html>
