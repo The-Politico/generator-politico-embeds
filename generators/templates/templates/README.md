@@ -2,11 +2,22 @@
 
 #### Embed code
 
+Your embed code is dependent on the filename of the embed HTML in `src/templates/graphics/`. The default embed provided is called `graphic.html`, so the embed code is:
+
 ```
-<div id="<%=slug%>"></div>
+<div id="graphic"></div>
 
 <script src="//pym.nprapps.org/pym.v1.min.js"></script>
-<script>new pym.Parent('<%=slug%>', 'http://www.politico.com/interactives/<%=path%>', {})</script>
+<script>new pym.Parent('graphic', 'https://www.politico.com/interactives/<%=path%>graphic/', {})</script>
+```
+
+Generally, the embed code works like this:
+
+```
+<div id="YOUR_EMBED_NAME_HERE"></div>
+
+<script src="//pym.nprapps.org/pym.v1.min.js"></script>
+<script>new pym.Parent('YOUR_EMBED_NAME_HERE', 'https://www.politico.com/interactives/<%=path%>YOUR_EMBED_NAME_HERE/', {})</script>
 ```
 
 **NOTE:** If you change the `publishPath` in `meta.json`, you need to adjust the URL in this code, as well.
