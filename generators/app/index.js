@@ -4,7 +4,8 @@ module.exports = class extends Generator {
   initializing() {
     this.composeWith('politico-interactives:passphrase');
     this.composeWith('politico-interactives:linters');
-    this.composeWith('politico-interactives:gulp');
+    this.composeWith('politico-interactives:gulp-common');
+    this.composeWith('politico-interactives:gulp-statics');
     this.composeWith('politico-interactives:styles');
   }
 
@@ -23,6 +24,7 @@ module.exports = class extends Generator {
     this.composeWith(require.resolve('../meta'), {
       title: this.title,
     });
+    this.composeWith(require.resolve('../gulp-render'));
     this.composeWith(require.resolve('../templates'), {
       title: this.title,
     });

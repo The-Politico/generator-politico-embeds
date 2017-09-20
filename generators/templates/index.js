@@ -1,7 +1,5 @@
 const Generator = require('yeoman-generator');
 const mkdirp = require('mkdirp');
-const fs = require('fs');
-const open = require('open');
 const S = require('string');
 
 module.exports = class extends Generator {
@@ -16,15 +14,24 @@ module.exports = class extends Generator {
   }
 
   prompting() {
-    const questions = [ {
-      type: 'confirm',
-      name: 'archie',
-      message: 'Would you like to include an ArchieML configuration?',
-      default: false,
-    }];
+    const questions = [
+      {
+        type: 'confirm',
+        name: 'archie',
+        message: 'Would you like to include an ArchieML configuration?',
+        default: false,
+      },
+      {
+        type: 'confirm',
+        name: 'spreadsheet',
+        message: 'Would you like Google Spreadsheet integration?',
+        default: false,
+      },
+    ];
 
     return this.prompt(questions).then((answers) => {
       this.archie = answers.archie;
+      this.spreadsheet = answers.spreadsheet;
     });
   }
 
@@ -35,6 +42,9 @@ module.exports = class extends Generator {
     if (this.archie) {
       this.composeWith('politico-interactives:archie');
     }
+    if (this.spreadsheet) {
+      this.composeWith('politico-interactives:spreadsheet');
+    }
   }
 
   writing() {
@@ -42,19 +52,29 @@ module.exports = class extends Generator {
     // Skeleton
     mkdirp('./src');
     mkdirp('./dist');
-    mkdirp('./server')
+    mkdirp('./server');
+
+    this.fs.copyTpl(
+      this.templatePath('gulpfile.js'),
+      this.destinationPath('gulpfile.js'),
+      { archie: this.archie,
+        spreadsheet: this.spreadsheet,
+      });
     // Nunjucks templates
     this.fs.copyTpl(
-      this.templatePath('src/templates/embed.html'),
-      this.destinationPath('src/templates/embed.html'),
+      this.templatePath('src/templates/preview.html'),
+      this.destinationPath('src/templates/preview.html'),
       { slug: this.slug });
-    this.fs.copyTpl(
+    this.fs.copy(
       this.templatePath('src/templates/index.html'),
-      this.destinationPath('src/templates/index.html'),
-      { title: this.options.title });
+      this.destinationPath('src/templates/index.html'));
     this.fs.copyTpl(
       this.templatePath('src/templates/base.html'),
       this.destinationPath('src/templates/base.html'));
+    this.fs.copyTpl(
+      this.templatePath('src/templates/graphics/graphic.html'),
+      this.destinationPath('src/templates/graphics/graphic.html'),
+      { title: this.title });
     // Template context
     this.fs.writeJSON('src/data/data.json', {});
     this.fs.copy(
@@ -74,6 +94,14 @@ module.exports = class extends Generator {
       'pym.js',
     ];
     this.yarnInstall(dependencies, { save: true });
+
+    const devDependencies = [
+      'gulp-env',
+      'node-env-file',
+      'run-sequence',
+      'secure-keys',
+    ];
+    this.yarnInstall(devDependencies, { dev: true });
   }
 
   end() {

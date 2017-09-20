@@ -1,9 +1,15 @@
-{%extends "base.html"%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Index of embeds</title>
+  </head>
+  <body>
+    <h2>Visit each of the links to see each individual embed</h2>
+    <ol>
+        {% for route in routes %}
+        <li><a href="/{{ route.split('/')[3].split('.')[0] }}">{{ route.split('/')[3].split('.')[0] }}</a></li>
+        {% endfor %}
+    </ol>
+  </body>
+</html>
 
-{%block title%}
-<title><%=title%></title>
-{%endblock%}
-
-{%block content%}
-<h1>POLITICO</h1>
-{%endblock%}

@@ -5,7 +5,7 @@
   <meta charset="utf-8"> {%block title%}
   <title>Politico Interactives</title>{%endblock%}
   {% if not embedded %}
-  <link href="./css/main-app.css" rel="stylesheet">
+  <link href="../css/main-app.css" rel="stylesheet">
   {% endif %}
   <!--Typekit-->
   <script src="https://use.typekit.net/you6ipe.js"></script>
@@ -21,11 +21,7 @@
 
 <body>
   {%block content%} {%endblock%} 
-  {% if embedded %}
   <script type="text/javascript" src="../js/main-app.bundle.js"></script>
-  {% else %}
-  <script type="text/javascript" src="./js/main-app.bundle.js"></script>
-  {% endif %}
 </body>
 
 </html>
