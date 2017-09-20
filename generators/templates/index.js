@@ -105,6 +105,6 @@ module.exports = class extends Generator {
   }
 
   end() {
-    this.spawnCommand('gulp')
+    this.spawnCommand('gulp');
   }
 };

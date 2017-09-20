@@ -15,6 +15,16 @@
     .embed-preview-mobile {
       max-width: 300px;
     }
+
+    .embed-code {
+      max-width: 600px;
+      margin: 50px auto 0;
+    }
+
+    .embed-code textarea {
+      font-size: 16px;
+      font-family: monospace;
+    }
     </style>
   </head>
   <body>
@@ -25,5 +35,17 @@
 
     <div id="preview_{{ slug }}-mobile" class="embed-preview embed-preview-mobile"></div>
     <script>new pym.Parent('preview_{{ slug }}-mobile', '/embed/{{ slug }}', {})</script>
+
+    <div class="embed-code">
+      <h3>Embed Code</h3>
+      <textarea rows="10" cols="60">
+<div id="{{ slug }}"></div>
+
+<script src="//pym.nprapps.org/pym.v1.min.js"></script>
+<script>
+  new pym.Parent('{{ slug }}', 'https://www.politico.com/interactives/{{ META.publishPath }}{{ slug }}/', {})
+</script>
+      </textarea>
+    </div>
   </body>
 </html>
