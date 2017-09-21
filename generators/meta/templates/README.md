@@ -8,7 +8,7 @@ Your embed code is dependent on the filename of the embed HTML in `src/templates
 <div id="graphic"></div>
 
 <script src="//pym.nprapps.org/pym.v1.min.js"></script>
-<script>new pym.Parent('graphic', 'https://www.politico.com/interactives/<%=path%>graphic/', {})</script>
+<script>new pym.Parent('graphic', 'https://www.politico.com/interactives/<%=path%>graphics/graphic.html', {})</script>
 ```
 
 Generally, the embed code works like this:
@@ -17,7 +17,7 @@ Generally, the embed code works like this:
 <div id="YOUR_EMBED_NAME_HERE"></div>
 
 <script src="//pym.nprapps.org/pym.v1.min.js"></script>
-<script>new pym.Parent('YOUR_EMBED_NAME_HERE', 'https://www.politico.com/interactives/<%=path%>YOUR_EMBED_NAME_HERE/', {})</script>
+<script>new pym.Parent('YOUR_EMBED_NAME_HERE', 'https://www.politico.com/interactives/<%=path%>graphics/YOUR_EMBED_NAME_HERE.html', {})</script>
 ```
 
 **NOTE:** If you change the `publishPath` in `meta.json`, you need to adjust the URL in this code, as well.

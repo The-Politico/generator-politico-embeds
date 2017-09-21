@@ -24,7 +24,6 @@ module.exports = class extends Generator {
     this.composeWith(require.resolve('../meta'), {
       title: this.title,
     });
-    this.composeWith(require.resolve('../gulp-render'));
     this.composeWith(require.resolve('../templates'), {
       title: this.title,
     });

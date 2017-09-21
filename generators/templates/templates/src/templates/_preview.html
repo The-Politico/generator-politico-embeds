@@ -31,19 +31,19 @@
     <script src="//pym.nprapps.org/pym.v1.min.js"></script>
 
     <div id="preview_{{ slug }}-desktop" class="embed-preview embed-preview-desktop"></div>
-    <script>new pym.Parent('preview_{{ slug }}-desktop', '/embed/{{ slug }}', {})</script>
+    <script>new pym.Parent('preview_{{ slug }}-desktop', '/embed/{{ slug }}', {});</script>
 
     <div id="preview_{{ slug }}-mobile" class="embed-preview embed-preview-mobile"></div>
-    <script>new pym.Parent('preview_{{ slug }}-mobile', '/embed/{{ slug }}', {})</script>
+    <script>new pym.Parent('preview_{{ slug }}-mobile', '/embed/{{ slug }}', {});</script>
 
     <div class="embed-code">
       <h3>Embed Code</h3>
-      <textarea rows="10" cols="60">
+      <textarea rows="10" cols="60" readonly="true">
 <div id="{{ slug }}"></div>
 
 <script src="//pym.nprapps.org/pym.v1.min.js"></script>
 <script>
-  new pym.Parent('{{ slug }}', 'https://www.politico.com/interactives/{{ META.publishPath }}{{ slug }}/', {})
+  new pym.Parent('{{ slug }}', 'https://www.politico.com/interactives/{{ META.publishPath }}graphics/{{slug}}.html', {});
 </script>
       </textarea>
     </div>

@@ -62,15 +62,15 @@ module.exports = class extends Generator {
       });
     // Nunjucks templates
     this.fs.copyTpl(
-      this.templatePath('src/templates/preview.html'),
-      this.destinationPath('src/templates/preview.html'),
+      this.templatePath('src/templates/_preview.html'),
+      this.destinationPath('src/templates/_preview.html'),
       { slug: this.slug });
     this.fs.copy(
-      this.templatePath('src/templates/index.html'),
-      this.destinationPath('src/templates/index.html'));
+      this.templatePath('src/templates/_index.html'),
+      this.destinationPath('src/templates/_index.html'));
     this.fs.copyTpl(
-      this.templatePath('src/templates/base.html'),
-      this.destinationPath('src/templates/base.html'));
+      this.templatePath('src/templates/_base.html'),
+      this.destinationPath('src/templates/_base.html'));
     this.fs.copyTpl(
       this.templatePath('src/templates/graphics/graphic.html'),
       this.destinationPath('src/templates/graphics/graphic.html'),
