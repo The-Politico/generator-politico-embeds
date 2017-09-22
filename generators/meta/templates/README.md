@@ -51,6 +51,10 @@ Sometimes, if you have animations associated with your transitions, you may want
 window.setTimeout(() => {pymChild.sendHeight();}, 500);
 ```
 
+#### Starting a new embed page
+
+To start a new embed page, use the `new-embed` subgenerator by calling `yo politico-interactives:new-embed`. It will ask you for a slug, and then you can see your new embed page by going to `localhost:3000/slug`. 
+
 #### To publish
 
 Make sure you have the correct publish path set in `meta.json` and that you've correctly filled in you AWS access keys in `aws.json`. Then run:
