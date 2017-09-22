@@ -2,11 +2,18 @@
 <html>
 
 <head>
-  <meta charset="utf-8"> {%block title%}
-  <title>Politico Interactives</title>{%endblock%}
+  <meta charset="utf-8"> 
+  
+  {%block title%}
+  <title>Politico Interactives</title>
+  {%endblock%}
+
+  {% block css %}
   {% if not embedded %}
   <link href="../css/main-app.css" rel="stylesheet">
   {% endif %}
+  {% endblock %}
+
   <!--Typekit-->
   <script src="https://use.typekit.net/you6ipe.js"></script>
   <script>
@@ -20,8 +27,11 @@
 </head>
 
 <body>
-  {%block content%} {%endblock%} 
-  <script type="text/javascript" src="../js/main-app.bundle.js"></script>
+  {%block content%} 
+  {%endblock%} 
+  
+  {% block js %}
+  {% endblock %}
 </body>
 
 </html>
