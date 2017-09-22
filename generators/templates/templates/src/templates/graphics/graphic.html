@@ -1,0 +1,19 @@
+{%extends "_base.html"%}
+
+{%block title%}
+<title><%=title%></title>
+{%endblock%}
+
+{% block css %}
+{% if not dev %}
+<link href="../css/main-app.css" rel="stylesheet">
+{% endif %}
+{% endblock %}
+
+{%block content%}
+<h1>POLITICO</h1>
+{%endblock%}
+
+{% block js %}
+<script type="text/javascript" src="../js/main-app.bundle.js"></script>
+{% endblock %}

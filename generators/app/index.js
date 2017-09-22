@@ -4,7 +4,8 @@ module.exports = class extends Generator {
   initializing() {
     this.composeWith('politico-interactives:passphrase');
     this.composeWith('politico-interactives:linters');
-    this.composeWith('politico-interactives:gulp');
+    this.composeWith('politico-interactives:gulp-common');
+    this.composeWith('politico-interactives:gulp-statics');
     this.composeWith('politico-interactives:styles');
   }
 

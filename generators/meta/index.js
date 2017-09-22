@@ -36,6 +36,7 @@ module.exports = class extends Generator {
       this.templatePath('README.md'),
       this.destinationPath('README.md'), {
         slug: this.slug,
+        path: publishPath,
         title: this.title,
         userName: this.user.git.name(),
         userEmail: this.user.git.email(),
