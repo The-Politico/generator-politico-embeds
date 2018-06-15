@@ -16,7 +16,7 @@ const gulp = require('./gulp')([
   'dist',
   'html',
   'img',
-  'img-watch'
+  'img-watch',
   <% if (spreadsheet) { %>'spreadsheet', <% } %>
 ]);
 
