@@ -39,6 +39,7 @@ module.exports = class extends Generator {
     this.composeWith('politico-interactives:bundler-webpack', {
       archie: this.archie,
     });
+    this.composeWith(require.resolve('../gulp-statics'));
     if (this.archie) {
       this.composeWith('politico-interactives:archie');
     }
@@ -66,8 +67,8 @@ module.exports = class extends Generator {
       this.destinationPath('src/templates/_preview.html'),
       { slug: this.slug });
     this.fs.copy(
-      this.templatePath('src/templates/_index.html'),
-      this.destinationPath('src/templates/_index.html'));
+      this.templatePath('src/templates/index.html'),
+      this.destinationPath('src/templates/index.html'));
     this.fs.copyTpl(
       this.templatePath('src/templates/_base.html'),
       this.destinationPath('src/templates/_base.html'));

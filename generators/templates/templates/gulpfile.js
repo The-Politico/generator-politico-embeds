@@ -15,6 +15,7 @@ const gulp = require('./gulp')([
   'data-watch',
   'dist',
   'html',
+  'embeds',
   'img',
   'img-watch',
   <% if (spreadsheet) { %>'spreadsheet', <% } %>
@@ -43,7 +44,7 @@ try {
 gulp.task('default', ['dev', 'img-watch', 'data-watch']);
 
 gulp.task('render', (cb) => {
-  runSequence('html', 'img', 'data', 'build', cb);
+  runSequence('html', 'embeds', 'img', 'data', 'build', cb);
 });
 
 gulp.task('preview', (cb) => {

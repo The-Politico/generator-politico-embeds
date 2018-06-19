@@ -7,9 +7,8 @@
     <h2>Visit each of the links to see each individual embed</h2>
     <ol>
         {% for route in routes %}
-        <li><a href="/{{ route.split('/')[3].split('.')[0] }}">{{ route.split('/')[3].split('.')[0] }}</a></li>
+        <li><a href="./{{ route.split('/')[3].split('.')[0] }}/preview.html">{{ route.split('/')[3].split('.')[0] }}</a></li>
         {% endfor %}
     </ol>
   </body>
 </html>
-
