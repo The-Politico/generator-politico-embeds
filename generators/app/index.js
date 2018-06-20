@@ -7,6 +7,9 @@ module.exports = class extends Generator {
     this.composeWith('politico-interactives:gulp-common');
     this.composeWith('politico-interactives:gulp-statics');
     this.composeWith('politico-interactives:styles');
+
+     // local version of gulp statics includes custom embed.html generation
+    this.composeWith(require.resolve('../gulp-statics'));
   }
 
   prompting() {

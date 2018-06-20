@@ -27,11 +27,18 @@ module.exports = class extends Generator {
         message: 'Would you like Google Spreadsheet integration?',
         default: false,
       },
+      {
+        type: 'confirm',
+        name: 'ai2html',
+        message: 'Would you like to include an ai2html configuration?',
+        default: false,
+      },
     ];
 
     return this.prompt(questions).then((answers) => {
       this.archie = answers.archie;
       this.spreadsheet = answers.spreadsheet;
+      this.ai2html = answers.ai2html;
     });
   }
 
@@ -44,6 +51,9 @@ module.exports = class extends Generator {
     }
     if (this.spreadsheet) {
       this.composeWith('politico-interactives:spreadsheet');
+    }
+    if (this.ai2html) {
+      this.composeWith(require.resolve('../ai2html'));
     }
   }
 
@@ -66,8 +76,8 @@ module.exports = class extends Generator {
       this.destinationPath('src/templates/_preview.html'),
       { slug: this.slug });
     this.fs.copy(
-      this.templatePath('src/templates/_index.html'),
-      this.destinationPath('src/templates/_index.html'));
+      this.templatePath('src/templates/index.html'),
+      this.destinationPath('src/templates/index.html'));
     this.fs.copyTpl(
       this.templatePath('src/templates/_base.html'),
       this.destinationPath('src/templates/_base.html'));

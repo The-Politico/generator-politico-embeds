@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
   glob('src/templates/graphics/*.html', (er, files) => {
     ctx.routes = files;
-    res.render('_index.html', ctx);
+    res.render('index.html', ctx);
   });
 });
 
@@ -20,7 +20,13 @@ router.get('/:graphic', (req, res) => {
   res.render('_preview.html', ctx);
 });
 
-router.get('/embed/:graphic', (req, res) => {
+router.get('/:graphic/preview.html', (req, res) => {
+  const ctx = context.getContext();
+  ctx.slug = req.params.graphic;
+  res.render('_preview.html', ctx);
+});
+
+router.get('/:graphic/embed.html', (req, res) => {
   const ctx = context.getContext();
   ctx.dev = true;
   res.render(`graphics/${req.params.graphic}.html`, ctx);

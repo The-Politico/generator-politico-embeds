@@ -31,10 +31,10 @@
     <script src="//pym.nprapps.org/pym.v1.min.js"></script>
 
     <div id="preview_{{ slug }}-desktop" class="embed-preview embed-preview-desktop"></div>
-    <script>new pym.Parent('preview_{{ slug }}-desktop', '/embed/{{ slug }}', {});</script>
+    <script>new pym.Parent('preview_{{ slug }}-desktop', './embed.html', {});</script>
 
     <div id="preview_{{ slug }}-mobile" class="embed-preview embed-preview-mobile"></div>
-    <script>new pym.Parent('preview_{{ slug }}-mobile', '/embed/{{ slug }}', {});</script>
+    <script>new pym.Parent('preview_{{ slug }}-mobile', './embed.html', {});</script>
 
     <div class="embed-code">
       <h3>Embed Code</h3>
@@ -43,7 +43,7 @@
 
 <script src="//pym.nprapps.org/pym.v1.min.js"></script>
 <script>
-  new pym.Parent('{{ slug }}', 'https://www.politico.com/interactives/{{ META.publishPath }}graphics/{{slug}}.html', {});
+  new pym.Parent('{{ slug }}', 'https://www.politico.com/{{ META.publishPath }}{{slug}}/embed.html', {});
 </script>
       </textarea>
     </div>
