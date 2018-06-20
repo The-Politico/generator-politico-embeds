@@ -46,7 +46,6 @@ module.exports = class extends Generator {
     this.composeWith('politico-interactives:bundler-webpack', {
       archie: this.archie,
     });
-    this.composeWith(require.resolve('../gulp-statics'));
     if (this.archie) {
       this.composeWith('politico-interactives:archie');
     }

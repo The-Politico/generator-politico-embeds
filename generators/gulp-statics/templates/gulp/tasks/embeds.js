@@ -26,7 +26,7 @@ module.exports = () => {
   const ctx = context.getContext();
   ctx.env = 'production';
 
-  let graphicName = null;
+  let graphicName;
 
   return gulp.src([
     'src/templates/graphics/*.html',
