@@ -84,7 +84,10 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('src/templates/graphics/graphic.html'),
       this.destinationPath('src/templates/graphics/graphic.html'),
-      { title: this.title });
+      {
+        title: this.title,
+        ai2html: this.ai2html,
+      });
     // Template context
     this.fs.writeJSON('src/data/data.json', {});
     this.fs.copy(
