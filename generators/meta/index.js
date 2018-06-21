@@ -55,5 +55,4 @@ module.exports = class extends Generator {
 
     this.fs.writeJSON('meta.json', metaJSON);
   }
-
 };
